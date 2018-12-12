@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import io.opentracing.Tracer;
+import io.opentracing.util.GlobalTracer;
 
 import com.in28minutes.springboot.observation.ConcreteTracer;
 
@@ -17,6 +18,8 @@ public class StudentServicesApplication {
 
     @Bean
     public Tracer tracer() {
-       return ConcreteTracer.getTracer("StudentServices");
+       Tracer tracer = ConcreteTracer.getTracer("StudentServices");
+       //GlobalTracer.register(tracer);
+       return tracer;
     }
 }
