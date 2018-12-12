@@ -7,12 +7,15 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.in28minutes.springboot.model.Course;
 import com.in28minutes.springboot.model.Student;
 
 @Component
 public class StudentService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(StudentService.class);
 
 	private static List<Student> students = new ArrayList<>();
 
