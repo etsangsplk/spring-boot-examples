@@ -20,6 +20,7 @@ public class StudentService {
 	private static List<Student> students = new ArrayList<>();
 
 	static {
+		LOGGER.info("initializa data for testing");
 		//Initialize Data
 		Course course1 = new Course("Course1", "Spring", "10 Steps", Arrays
 				.asList("Learn Maven", "Import Project", "First Example",
